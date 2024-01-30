@@ -38,7 +38,7 @@ CREATE TABLE Arzt (
 );
 
 CREATE TABLE Medikament (
-    PZN VARCHAR2(10) NOT NULL,
+    PZN NUMBER NOT NULL,
     Name VARCHAR2(100) NOT NULL,
     Verpfl VARCHAR2(50) NOT NULL,
     Dos VARCHAR2(50) NOT NULL,
@@ -50,4 +50,73 @@ CREATE TABLE Medikament (
     Neben VARCHAR2(200),
     Preis NUMBER NOT NULL,
     PRIMARY KEY(PZN)
+);
+
+CREATE TABLE Rezept (
+    Datum DATE NOT NULL,
+    Kosten NUMBER NOT NULL,
+    Hinw VARCHAR2(200),
+    Art VARCHAR2(50) NOT NULL,
+    AID NUMBER,
+    PaID NUMBER,
+    Name VARCHAR2(100),
+    PRIMARY KEY (Datum, AID, PaID),
+    FOREIGN KEY (AID) REFERENCES Arzt(AID),
+    FOREIGN KEY (PaID) REFERENCES Patient(PaID),
+    FOREIGN KEY (Name) REFERENCES Krankenversicherung(Name)
+);
+
+CREATE TABLE Krankschreibung (
+    Datum DATE NOT NULL,
+    Kosten NUMBER NOT NULL,
+    Art VARCHAR2(50) NOT NULL,
+    Grund VARCHAR2(200) NOT NULL,
+    Dauer NUMBER NOT NULL,
+    AID NUMBER,
+    PaID NUMBER,
+    PRIMARY KEY (Datum, AID, PaID),
+    FOREIGN KEY (AID) REFERENCES Arzt(AID),
+    FOREIGN KEY (PaID) REFERENCES Patient(PaID)
+);
+
+CREATE TABLE Brief (
+    Datum DATE NOT NULL,
+    Kosten NUMBER NOT NULL,
+    Empf VARCHAR2(100) NOT NULL,
+    Diagnose VARCHAR2(200) NOT NULL,
+    BVerl VARCHAR2(200),
+    Wmaßn VARCHAR2(200),
+    AID NUMBER,
+    PaID NUMBER,
+    PRIMARY KEY (Datum, AID, PaID),
+    FOREIGN KEY (AID) REFERENCES Arzt(AID),
+    FOREIGN KEY (PaID) REFERENCES Patient(PaID)
+);
+
+CREATE TABLE Leistung (
+    Name VARCHAR2(30) NOT NULL,
+    GOAE VARCHAR2(14) NOT NULL,
+    PRIMARY KEY (Name, GOAE),
+    FOREIGN KEY (Name) REFERENCES Krankenversicherung(Name),
+    FOREIGN KEY (GOAE) REFERENCES Leistung(GOAE),
+);
+
+CREATE TABLE Enthält (
+    PZN NUMBER,
+    AID VARCHAR2(10),
+    Datum DATE,
+    Menge NUMBER,
+    PRIMARY KEY (PZN, AID, Datum),
+    FOREIGN KEY (PZN) REFERENCES Medikament(PZN),
+    FOREIGN KEY (AID, Datum) REFERENCES Rezept(AID, Datum)
+);
+
+CREATE TABLE RechnetAb (
+    AID VARCHAR2(10),
+    GOAE VARCHAR2(14),
+    Name VARCHAR2(30) NOT NULL,
+    PRIMARY KEY (AID, GOAE),
+    FOREIGN KEY (AID) REFERENCES Arzt(AID),
+    FOREIGN KEY (GOAE) REFERENCES Leistung(GOAE),
+    FOREIGN KEY (Name) REFERENCES Krankenversicherung(Name),
 );
