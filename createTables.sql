@@ -94,7 +94,7 @@ CREATE TABLE Brief (
     FOREIGN KEY (PaID) REFERENCES Patient(PaID)
 );
 
-CREATE TABLE isteistung (
+CREATE TABLE istLeistungVon (
     Name VARCHAR2(30) NOT NULL,
     GOAE VARCHAR2(14) NOT NULL,
     PRIMARY KEY (Name, GOAE),
