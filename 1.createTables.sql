@@ -54,7 +54,7 @@ CREATE TABLE Medikament (
 );
 
 CREATE TABLE Rezept (
-    Datum DATE NOT NULL,
+    Datum TIMESTAMP NOT NULL,
     Kosten NUMBER NOT NULL,
     Hinw VARCHAR2(200),
     Art VARCHAR2(50) NOT NULL,
@@ -68,7 +68,7 @@ CREATE TABLE Rezept (
 );
 
 CREATE TABLE Krankschreibung (
-    Datum DATE NOT NULL,
+    Datum TIMESTAMP NOT NULL,
     Kosten NUMBER NOT NULL,
     Art VARCHAR2(50) NOT NULL,
     Grund VARCHAR2(200) NOT NULL,
@@ -81,7 +81,7 @@ CREATE TABLE Krankschreibung (
 );
 
 CREATE TABLE Brief (
-    Datum DATE NOT NULL,
+    Datum TIMESTAMP NOT NULL,
     Kosten NUMBER NOT NULL,
     Empf VARCHAR2(100) NOT NULL,
     Diagnose VARCHAR2(200) NOT NULL,
@@ -105,7 +105,7 @@ CREATE TABLE istLeistungVon (
 CREATE TABLE Enthält (
     PZN NUMBER NOT NULL,
     AID VARCHAR2(10) NOT NULL,
-    Datum DATE NOT NULL,
+    Datum TIMESTAMP NOT NULL,
     PaID VARCHAR2(10) NOT NULL,
     Menge NUMBER NOT NULL,
     PRIMARY KEY (PZN, AID, Datum, PaID),
@@ -121,4 +121,4 @@ CREATE TABLE RechnetAb (
     FOREIGN KEY (AID) REFERENCES Arzt(AID),
     FOREIGN KEY (GOAE) REFERENCES Leistung(GOAE),
     FOREIGN KEY (Name) REFERENCES Krankenversicherung(Name)
-);
+)
