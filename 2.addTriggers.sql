@@ -25,19 +25,19 @@ CREATE OR REPLACE TRIGGER auto_fill_datum_brief
 BEFORE INSERT ON Brief
 FOR EACH ROW
 BEGIN
-    :NEW.Datum := CURRENT_DATE;
+    :NEW.Datum := SYSTIMESTAMP;
 END;
 
 CREATE OR REPLACE TRIGGER auto_fill_datum_krankschreibung
 BEFORE INSERT ON Krankschreibung
 FOR EACH ROW
 BEGIN
-    :NEW.Datum := SYSDATE;
+    :NEW.Datum := SYSTIMESTAMP;
 END;
 
 CREATE OR REPLACE TRIGGER auto_fill_datum_rezept
 BEFORE INSERT ON Rezept
 FOR EACH ROW
 BEGIN
-    :NEW.Datum := SYSDATE;
+    :NEW.Datum := SYSTIMESTAMP;
 END;
