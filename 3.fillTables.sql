@@ -1,8 +1,7 @@
 -- Insert data into Patient table
 BEGIN
     FOR i IN 1..50 LOOP
-        INSERT INTO Patient VALUES (
-            'PaID'||i, 
+        INSERT INTO Patient(VNAME, NNAME,ADR,GESCHLECHT,TELNR) VALUES ( 
             'FirstName'||i, 
             'LastName'||i, 
             'Address'||i, 
