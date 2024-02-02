@@ -262,17 +262,8 @@ BEGIN
 END;
 /
 
-CREATE TABLE RechnetAb (
-    AID VARCHAR2(10) NOT NULL,
-    GOAE VARCHAR2(14) NOT NULL,
-    Name VARCHAR2(30) NOT NULL,
-    PRIMARY KEY (AID, GOAE),
-    FOREIGN KEY (AID) REFERENCES Arzt(AID),
-    FOREIGN KEY (GOAE) REFERENCES Leistung(GOAE),
-    FOREIGN KEY (Name) REFERENCES Krankenversicherung(Name)
-);
 
--- Insert statements
+-- Insert data into RechnetAb table
 INSERT ALL
 INTO RechnetAb (AID, GOAE, Name) VALUES ('AID1', 1, 'Allianz Krankenversicherung')
 INTO RechnetAb (AID, GOAE, Name) VALUES ('AID2', 2, 'AOK Krankenkasse')
