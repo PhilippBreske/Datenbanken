@@ -208,15 +208,45 @@ END;
 /
 
 -- Insert data into istLeistungVon table
-BEGIN
-    FOR i IN 1..50 LOOP
-        INSERT INTO istLeistungVon VALUES (
-            'InsuranceName'||i, 
-            'GOAE'||i
-        );
-    END LOOP;
-END;
-/
+INSERT ALL
+INTO istLeistungVon (Name, GOAE) VALUES ('Allianz Krankenversicherung', 1)
+INTO istLeistungVon (Name, GOAE) VALUES ('AOK Krankenkasse', 2)
+INTO istLeistungVon (Name, GOAE) VALUES ('AXA Gesundheitskasse', 3)
+INTO istLeistungVon (Name, GOAE) VALUES ('Techniker Krankenkasse', 4)
+INTO istLeistungVon (Name, GOAE) VALUES ('DKV Privatkrankenversicherung', 5)
+INTO istLeistungVon (Name, GOAE) VALUES ('Barmer Krankenkasse', 6)
+INTO istLeistungVon (Name, GOAE) VALUES ('Debeka Krankenversicherung', 7)
+INTO istLeistungVon (Name, GOAE) VALUES ('Allianz Krankenversicherung', 8)
+INTO istLeistungVon (Name, GOAE) VALUES ('AOK Krankenkasse', 9)
+INTO istLeistungVon (Name, GOAE) VALUES ('AXA Gesundheitskasse', 10)
+INTO istLeistungVon (Name, GOAE) VALUES ('Techniker Krankenkasse', 11)
+INTO istLeistungVon (Name, GOAE) VALUES ('DKV Privatkrankenversicherung', 12)
+INTO istLeistungVon (Name, GOAE) VALUES ('Barmer Krankenkasse', 13)
+INTO istLeistungVon (Name, GOAE) VALUES ('Debeka Krankenversicherung', 14)
+INTO istLeistungVon (Name, GOAE) VALUES ('Allianz Krankenversicherung', 15)
+INTO istLeistungVon (Name, GOAE) VALUES ('AOK Krankenkasse', 16)
+INTO istLeistungVon (Name, GOAE) VALUES ('AXA Gesundheitskasse', 17)
+INTO istLeistungVon (Name, GOAE) VALUES ('Techniker Krankenkasse', 18)
+INTO istLeistungVon (Name, GOAE) VALUES ('DKV Privatkrankenversicherung', 19)
+INTO istLeistungVon (Name, GOAE) VALUES ('Barmer Krankenkasse', 20)
+INTO istLeistungVon (Name, GOAE) VALUES ('Debeka Krankenversicherung', 21)
+INTO istLeistungVon (Name, GOAE) VALUES ('Allianz Krankenversicherung', 22)
+INTO istLeistungVon (Name, GOAE) VALUES ('AOK Krankenkasse', 23)
+INTO istLeistungVon (Name, GOAE) VALUES ('AXA Gesundheitskasse', 24)
+INTO istLeistungVon (Name, GOAE) VALUES ('Techniker Krankenkasse', 25)
+INTO istLeistungVon (Name, GOAE) VALUES ('DKV Privatkrankenversicherung', 26)
+INTO istLeistungVon (Name, GOAE) VALUES ('Barmer Krankenkasse', 27)
+INTO istLeistungVon (Name, GOAE) VALUES ('Debeka Krankenversicherung', 28)
+INTO istLeistungVon (Name, GOAE) VALUES ('Allianz Krankenversicherung', 29)
+INTO istLeistungVon (Name, GOAE) VALUES ('AOK Krankenkasse', 30)
+INTO istLeistungVon (Name, GOAE) VALUES ('AXA Gesundheitskasse', 1)
+INTO istLeistungVon (Name, GOAE) VALUES ('Techniker Krankenkasse', 2)
+INTO istLeistungVon (Name, GOAE) VALUES ('DKV Privatkrankenversicherung', 3)
+INTO istLeistungVon (Name, GOAE) VALUES ('Barmer Krankenkasse', 4)
+INTO istLeistungVon (Name, GOAE) VALUES ('Debeka Krankenversicherung', 5)
+INTO istLeistungVon (Name, GOAE) VALUES ('Allianz Krankenversicherung', 6)
+INTO istLeistungVon (Name, GOAE) VALUES ('AOK Krankenkasse', 7)
+SELECT 1 FROM DUAL;
 
 -- Insert data into Enthält table
 BEGIN
@@ -232,14 +262,54 @@ BEGIN
 END;
 /
 
--- Insert data into RechnetAb table
-BEGIN
-    FOR i IN 1..50 LOOP
-        INSERT INTO RechnetAb VALUES (
-            'AID'|| MOD(i,10) + 1,
-            'GOAE'||i, 
-            'InsuranceName'||i
-        );
-    END LOOP;
-END;
-/
+CREATE TABLE RechnetAb (
+    AID VARCHAR2(10) NOT NULL,
+    GOAE VARCHAR2(14) NOT NULL,
+    Name VARCHAR2(30) NOT NULL,
+    PRIMARY KEY (AID, GOAE),
+    FOREIGN KEY (AID) REFERENCES Arzt(AID),
+    FOREIGN KEY (GOAE) REFERENCES Leistung(GOAE),
+    FOREIGN KEY (Name) REFERENCES Krankenversicherung(Name)
+);
+
+-- Insert statements
+INSERT ALL
+INTO RechnetAb (AID, GOAE, Name) VALUES ('AID1', 1, 'Allianz Krankenversicherung')
+INTO RechnetAb (AID, GOAE, Name) VALUES ('AID2', 2, 'AOK Krankenkasse')
+INTO RechnetAb (AID, GOAE, Name) VALUES ('AID3', 3, 'AXA Gesundheitskasse')
+INTO RechnetAb (AID, GOAE, Name) VALUES ('AID4', 4, 'Techniker Krankenkasse')
+INTO RechnetAb (AID, GOAE, Name) VALUES ('AID5', 5, 'DKV Privatkrankenversicherung')
+INTO RechnetAb (AID, GOAE, Name) VALUES ('AID6', 6, 'Barmer Krankenkasse')
+INTO RechnetAb (AID, GOAE, Name) VALUES ('AID7', 7, 'Debeka Krankenversicherung')
+INTO RechnetAb (AID, GOAE, Name) VALUES ('AID8', 8, 'Allianz Krankenversicherung')
+INTO RechnetAb (AID, GOAE, Name) VALUES ('AID9', 9, 'AOK Krankenkasse')
+INTO RechnetAb (AID, GOAE, Name) VALUES ('AID10', 10, 'AXA Gesundheitskasse')
+INTO RechnetAb (AID, GOAE, Name) VALUES ('AID11', 11, 'Techniker Krankenkasse')
+INTO RechnetAb (AID, GOAE, Name) VALUES ('AID12', 12, 'DKV Privatkrankenversicherung')
+INTO RechnetAb (AID, GOAE, Name) VALUES ('AID13', 13, 'Barmer Krankenkasse')
+INTO RechnetAb (AID, GOAE, Name) VALUES ('AID14', 14, 'Debeka Krankenversicherung')
+INTO RechnetAb (AID, GOAE, Name) VALUES ('AID15', 15, 'Allianz Krankenversicherung')
+INTO RechnetAb (AID, GOAE, Name) VALUES ('AID16', 16, 'AOK Krankenkasse')
+INTO RechnetAb (AID, GOAE, Name) VALUES ('AID1', 17, 'AXA Gesundheitskasse')
+INTO RechnetAb (AID, GOAE, Name) VALUES ('AID2', 18, 'Techniker Krankenkasse')
+INTO RechnetAb (AID, GOAE, Name) VALUES ('AID3', 19, 'DKV Privatkrankenversicherung')
+INTO RechnetAb (AID, GOAE, Name) VALUES ('AID4', 20, 'Barmer Krankenkasse')
+INTO RechnetAb (AID, GOAE, Name) VALUES ('AID5', 21, 'Debeka Krankenversicherung')
+INTO RechnetAb (AID, GOAE, Name) VALUES ('AID6', 22, 'Allianz Krankenversicherung')
+INTO RechnetAb (AID, GOAE, Name) VALUES ('AID7', 23, 'AOK Krankenkasse')
+INTO RechnetAb (AID, GOAE, Name) VALUES ('AID8', 24, 'AXA Gesundheitskasse')
+INTO RechnetAb (AID, GOAE, Name) VALUES ('AID9', 25, 'Techniker Krankenkasse')
+INTO RechnetAb (AID, GOAE, Name) VALUES ('AID10', 26, 'DKV Privatkrankenversicherung')
+INTO RechnetAb (AID, GOAE, Name) VALUES ('AID11', 27, 'Barmer Krankenkasse')
+INTO RechnetAb (AID, GOAE, Name) VALUES ('AID12', 28, 'Debeka Krankenversicherung')
+INTO RechnetAb (AID, GOAE, Name) VALUES ('AID13', 29, 'Allianz Krankenversicherung')
+INTO RechnetAb (AID, GOAE, Name) VALUES ('AID14', 30, 'AOK Krankenkasse')
+INTO RechnetAb (AID, GOAE, Name) VALUES ('AID1', 1, 'AXA Gesundheitskasse')
+INTO RechnetAb (AID, GOAE, Name) VALUES ('AID2', 2, 'Techniker Krankenkasse')
+INTO RechnetAb (AID, GOAE, Name) VALUES ('AID3', 3, 'DKV Privatkrankenversicherung')
+INTO RechnetAb (AID, GOAE, Name) VALUES ('AID4', 4, 'Barmer Krankenkasse')
+INTO RechnetAb (AID, GOAE, Name) VALUES ('AID5', 5, 'Debeka Krankenversicherung')
+INTO RechnetAb (AID, GOAE, Name) VALUES ('AID6', 6, 'Allianz Krankenversicherung')
+INTO RechnetAb (AID, GOAE, Name) VALUES ('AID7', 7, 'AOK Krankenkasse')
+SELECT 1 FROM DUAL;
+
