@@ -7,3 +7,14 @@ FROM
     Krankschreibung
 GROUP BY
     PaID;
+
+CREATE VIEW KrankenkasseEarnings AS
+SELECT
+    R.Name AS Krankenkasse,
+    SUM(L.Kosten) AS Earnings
+FROM
+    RechnetAb R
+JOIN
+    Leistung L ON R.GOAE = L.GOAE
+GROUP BY
+    R.Name;
