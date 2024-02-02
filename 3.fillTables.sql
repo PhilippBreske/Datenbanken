@@ -191,21 +191,19 @@ INSERT INTO Krankschreibung (Kosten, Art, Grund, Dauer, AID, PaID) VALUES (80, '
 
 
 -- Insert data into Brief table
-BEGIN
-    FOR i IN 1..50 LOOP
-        INSERT INTO Brief VALUES (
-            SYSDATE - i, 
-            i * 40, 
-            'Recipient'||i, 
-            'Diagnosis'||i, 
-            'FurtherInformation'||i, 
-            'TreatmentPlan'||i, 
-            'AID'|| MOD(i,10) + 1,
-            'PaID'||i
-        );
-    END LOOP;
-END;
-/
+INSERT ALL
+    INTO Brief (Datum, Kosten, Empf, Diagnose, BVerl, Wmaßn, AID, PaID) VALUES (SYSTIMESTAMP, 50, 'Dr. Anna Schmidt', 'Erkältung', 'Krankschreibung verlängert', 'Medikamenteneinnahme', 'AID1', 'P1')
+    INTO Brief (Datum, Kosten, Empf, Diagnose, BVerl, Wmaßn, AID, PaID) VALUES (SYSTIMESTAMP, 60, 'Dr. Max Müller', 'Migräne', 'Weitere Untersuchungen erforderlich', 'Schmerzmittel verschrieben', 'AID2', 'P2')
+    INTO Brief (Datum, Kosten, Empf, Diagnose, BVerl, Wmaßn, AID, PaID) VALUES (SYSTIMESTAMP, 70, 'Dr. Sophie Hofmann', 'Rückenprobleme', 'Physiotherapie empfohlen', 'Krankschreibung für eine Woche', 'AID3', 'P3')
+    INTO Brief (Datum, Kosten, Empf, Diagnose, BVerl, Wmaßn, AID, PaID) VALUES (SYSTIMESTAMP, 80, 'Dr. Paul Fischer', 'Schwangerschaftskontrolle', 'Ultraschall durchgeführt', 'Nächster Termin in einem Monat', 'AID4', 'P4')
+    INTO Brief (Datum, Kosten, Empf, Diagnose, BVerl, Wmaßn, AID, PaID) VALUES (SYSTIMESTAMP, 90, 'Dr. Lena Wagner', 'Migräne', 'Weitere Untersuchungen erforderlich', 'Medikamenteneinnahme', 'AID5', 'P5')
+    INTO Brief (Datum, Kosten, Empf, Diagnose, BVerl, Wmaßn, AID, PaID) VALUES (SYSTIMESTAMP, 100, 'Dr. Leon Schulz', 'Herzbeschwerden', 'EKG durchgeführt', 'Herzmedikamente verschrieben', 'AID6', 'P6')
+    INTO Brief (Datum, Kosten, Empf, Diagnose, BVerl, Wmaßn, AID, PaID) VALUES (SYSTIMESTAMP, 110, 'Dr. Emilia Hermann', 'Halsentzündung', 'Antibiotika verschrieben', 'Bettruhe empfohlen', 'AID7', 'P7')
+    INTO Brief (Datum, Kosten, Empf, Diagnose, BVerl, Wmaßn, AID, PaID) VALUES (SYSTIMESTAMP, 120, 'Dr. Luca Kaiser', 'Blasenentzündung', 'Antibiotika verschrieben', 'Flüssigkeitszufuhr empfohlen', 'AID8', 'P8')
+    INTO Brief (Datum, Kosten, Empf, Diagnose, BVerl, Wmaßn, AID, PaID) VALUES (SYSTIMESTAMP, 130, 'Dr. Mia Beck', 'Depression', 'Therapie empfohlen', 'Krankschreibung für zwei Wochen', 'AID9', 'P9')
+    INTO Brief (Datum, Kosten, Empf, Diagnose, BVerl, Wmaßn, AID, PaID) VALUES (SYSTIMESTAMP, 140, 'Dr. Finn Lange', 'Appendizitis', 'Operation notwendig', 'Stationäre Aufnahme empfohlen', 'AID10', 'P10')
+SELECT 1 FROM dual;
+
 
 -- Insert data into istLeistungVon table
 INSERT ALL
