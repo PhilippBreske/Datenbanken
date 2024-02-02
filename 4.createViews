@@ -1,1 +1,9 @@
 --views
+CREATE VIEW AverageDauerView AS
+SELECT
+    PaID,
+    AVG(Dauer) AS AvgDauer
+FROM
+    Krankschreibung
+GROUP BY
+    PaID;
