@@ -138,7 +138,7 @@ INSERT ALL
     INTO Medikament (PZN, Name, Verpfl, Dos, Form, Unv, ZDt, Herst, Wirk, Neben, Preis) VALUES (1034, 'Methotrexat', 'Rezeptpflichtig', '10mg', 'Tablette', 'Keine bekannt', TO_DATE('01-10-2024', 'DD-MM-YYYY'), 'RheumaRelief', 'Methotrexat', 'Übelkeit', 11.99)
     INTO Medikament (PZN, Name, Verpfl, Dos, Form, Unv, ZDt, Herst, Wirk, Neben, Preis) VALUES (1035, 'Itraconazol', 'Rezeptpflichtig', '100mg', 'Kapsel', 'Keine bekannt', TO_DATE('01-11-2024', 'DD-MM-YYYY'), 'FungalGuard', 'Itraconazol', 'Magenschmerzen', 14.99)
     INTO Medikament (PZN, Name, Verpfl, Dos, Form, Unv, ZDt, Herst, Wirk, Neben, Preis) VALUES (1036, 'Clopidogrel', 'Rezeptpflichtig', '75mg', 'Tablette', 'Keine bekannt', TO_DATE('01-12-2024', 'DD-MM-YYYY'), 'ClotStopper', 'Clopidogrel', 'Schwindel', 12.49)
-SELECT * FROM dual;
+SELECT 1 FROM dual;
 
 
 
