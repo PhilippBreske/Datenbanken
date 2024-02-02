@@ -33,18 +33,16 @@ SELECT 1 FROM dual;
 
 
 -- Insert data into Krankenversicherung table
-BEGIN
-    FOR i IN 1..50 LOOP
-        INSERT INTO Krankenversicherung VALUES (
-            'InsuranceName'||i, 
-            'Insure'||i, 
-            'GeoGue'||i, 
-            '1234567890' || i, 
-            'InsuranceAddress'||i
-        );
-    END LOOP;
-END;
-/
+INSERT ALL
+    INTO Krankenversicherung (Name, Versicherungsart, GeoGue, TelNr, Adr) VALUES ('Allianz Krankenversicherung', 'privat', 'Deutschland', '0151-12345678', 'Musterstraße 1, Stadtstadt')
+    INTO Krankenversicherung (Name, Versicherungsart, GeoGue, TelNr, Adr) VALUES ('AOK Krankenkasse', 'gesetzlich', 'Deutschland', '0171-23456789', 'Beispielweg 2, Dorfdorf')
+    INTO Krankenversicherung (Name, Versicherungsart, GeoGue, TelNr, Adr) VALUES ('AXA Gesundheitskasse', 'privat', 'Deutschland', '0160-34567890', 'Teststraße 3, Städtchen')
+    INTO Krankenversicherung (Name, Versicherungsart, GeoGue, TelNr, Adr) VALUES ('Techniker Krankenkasse', 'gesetzlich', 'Deutschland', '0152-45678901', 'Musterplatz 4, Landstadt')
+    INTO Krankenversicherung (Name, Versicherungsart, GeoGue, TelNr, Adr) VALUES ('DKV Privatkrankenversicherung', 'privat', 'Deutschland', '0173-56789012', 'Beispielallee 5, Landgemeinde')
+    INTO Krankenversicherung (Name, Versicherungsart, GeoGue, TelNr, Adr) VALUES ('Barmer Krankenkasse', 'gesetzlich', 'Deutschland', '0154-67890123', 'Testgasse 6, Vorstadt')
+    INTO Krankenversicherung (Name, Versicherungsart, GeoGue, TelNr, Adr) VALUES ('Debeka Krankenversicherung', 'privat', 'Deutschland', '0165-78901234', 'Musterweg 7, Großstadt')
+SELECT 1 FROM dual;
+
 
 -- Insert data into Leistung table
 BEGIN
