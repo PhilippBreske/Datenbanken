@@ -58,21 +58,25 @@ END;
 /
 
 -- Insert data into Arzt table
-BEGIN
-    FOR i IN 1..10 LOOP
-        INSERT INTO Arzt VALUES (
-            'AID'||i, 
-            '1234567890' || i, 
-            'email'||i||'@example.com', 
-            'Address'||i, 
-            'DoctorFirstName'||i, 
-            'DoctorLastName'||i, 
-            'Specialty'||i, 
-            'Workplace'||i
-        );
-    END LOOP;
-END;
-/
+INSERT ALL
+    INTO Arzt (VName, NName, Fachgebiet, WB, Tel, Email, Adr) VALUES ('Dr. Anna', 'Schmidt', 'Allgemeinmedizin', 'Internistische Notfallmedizin, Palliativmedizin', '0151-12345678', 'dr.anna.schmidt@example.de', 'Hauptstraße 123, Stadtstadt')
+    INTO Arzt (VName, NName, Fachgebiet, WB, Tel, Email, Adr) VALUES ('Dr. Max', 'Müller', 'Augenheilkunde', 'Lasik-Chirurgie, Glaukom-Diagnostik', '0171-23456789', 'dr.max.mueller@example.de', 'Eichenweg 456, Dorfdorf')
+    INTO Arzt (VName, NName, Fachgebiet, WB, Tel, Email, Adr) VALUES ('Dr. Sophie', 'Hofmann', 'Orthopädie', 'Sportmedizin, Wirbelsäulenchirurgie', '0160-34567890', 'dr.sophie.hofmann@example.de', 'Birkenstraße 789, Städtchen')
+    INTO Arzt (VName, NName, Fachgebiet, WB, Tel, Email, Adr) VALUES ('Dr. Paul', 'Fischer', 'Gynäkologie', 'Reproduktionsmedizin, Onkologische Gynäkologie', '0152-45678901', 'dr.paul.fischer@example.de', 'Kiefernweg 101, Landstadt')
+    INTO Arzt (VName, NName, Fachgebiet, WB, Tel, Email, Adr) VALUES ('Dr. Lena', 'Wagner', 'Neurologie', 'Schlaganfalltherapie, Schlafmedizin', '0173-56789012', 'dr.lena.wagner@example.de', 'Ulmenallee 202, Landgemeinde')
+    INTO Arzt (VName, NName, Fachgebiet, WB, Tel, Email, Adr) VALUES ('Dr. Leon', 'Schulz', 'Kardiologie', 'Interventionelle Kardiologie, Elektrophysiologie', '0164-67890123', 'dr.leon.schulz@example.de', 'Ahornplatz 303, Vorstadt')
+    INTO Arzt (VName, NName, Fachgebiet, WB, Tel, Email, Adr) VALUES ('Dr. Emilia', 'Hermann', 'HNO', 'Allergologie, Kinder-HNO', '0155-78901234', 'dr.emilia.hermann@example.de', 'Fichtenweg 404, Großstadt')
+    INTO Arzt (VName, NName, Fachgebiet, WB, Tel, Email, Adr) VALUES ('Dr. Luca', 'Kaiser', 'Urologie', 'Andrologie, Urologische Onkologie', '0176-89012345', 'dr.luca.kaiser@example.de', 'Tannenstraße 505, Metropole')
+    INTO Arzt (VName, NName, Fachgebiet, WB, Tel, Email, Adr) VALUES ('Dr. Mia', 'Beck', 'Psychiatrie', 'Suchtmedizin, Gerontopsychiatrie', '0157-90123456', 'dr.mia.beck@example.de', 'Erlenplatz 606, Stadtstadt')
+    INTO Arzt (VName, NName, Fachgebiet, WB, Tel, Email, Adr) VALUES ('Dr. Finn', 'Lange', 'Chirurgie', 'Viszeralchirurgie, Minimalinvasive Chirurgie', '0178-01234567', 'dr.finn.lange@example.de', 'Pappelgasse 707, Dorfgemeinde')
+    INTO Arzt (VName, NName, Fachgebiet, WB, Tel, Email, Adr) VALUES ('Dr. Elena', 'Götz', 'Pädiatrie', 'Neonatologie, Kinderkardiologie', '0169-12345678', 'dr.elena.goetz@example.de', 'Lindenweg 808, Dorfdorf')
+    INTO Arzt (VName, NName, Fachgebiet, WB, Tel, Email, Adr) VALUES ('Dr. Moritz', 'Hoffmann', 'Dermatologie', 'Ästhetische Dermatologie, Lasertherapie', '0150-23456789', 'dr.moritz.hoffmann@example.de', 'Eschenallee 909, Landgemeinde')
+    INTO Arzt (VName, NName, Fachgebiet, WB, Tel, Email, Adr) VALUES ('Dr. Hannah', 'Schuster', 'Gastroenterologie', 'Hepatologie, Endoskopie', '0171-34567890', 'dr.hannah.schuster@example.de', 'Ulmenplatz 1010, Landstadt')
+    INTO Arzt (VName, NName, Fachgebiet, WB, Tel, Email, Adr) VALUES ('Dr. Liam', 'Vogel', 'Radiologie', 'Nuklearmedizin, Interventionelle Radiologie', '0152-45678901', 'dr.liam.vogel@example.de', 'Buchenstraße 1111, Vorstadt')
+    INTO Arzt (VName, NName, Fachgebiet, WB, Tel, Email, Adr) VALUES ('Dr. Amelie', 'Krüger', 'Endokrinologie', 'Diabetologie, Osteologie', '0173-56789012', 'dr.amelie.krueger@example.de', 'Eichenallee 1212, Großstadt')
+    INTO Arzt (VName, NName, Fachgebiet, WB, Tel, Email, Adr) VALUES ('Dr. David', 'Schmidt', 'Nephrologie', 'Nierentransplantation, Dialyse', '0154-67890123', 'dr.david.schmidt@example.de', 'Kastanienweg 1313, Metropole')
+SELECT 1 FROM dual;
+
 
 -- Insert data into Medikament table
 BEGIN
