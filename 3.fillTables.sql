@@ -159,38 +159,35 @@ END;
 /
 
 -- Insert data into Krankschreibung table
-INSERT ALL
-    INTO Krankschreibung (Kosten, Art, Grund, Dauer, AID, PaID) VALUES (50, 'Erstbescheinigung', 'Erkältung', 5, 'AID1', 'P1')
-    INTO Krankschreibung (Kosten, Art, Grund, Dauer, AID, PaID) VALUES (80, 'Folgebescheinigung', 'Rückenprobleme', 10, 'AID2', 'P2')
-    INTO Krankschreibung (Kosten, Art, Grund, Dauer, AID, PaID) VALUES (60, 'Erstbescheinigung', 'Magenbeschwerden', 7, 'AID3', 'P3')
-    INTO Krankschreibung (Kosten, Art, Grund, Dauer, AID, PaID) VALUES (70, 'Folgebescheinigung', 'Depression', 15, 'AID4', 'P4')
-    INTO Krankschreibung (Kosten, Art, Grund, Dauer, AID, PaID) VALUES (55, 'Erstbescheinigung', 'Kopfschmerzen', 3, 'AID5', 'P5')
-    INTO Krankschreibung (Kosten, Art, Grund, Dauer, AID, PaID) VALUES (90, 'Folgebescheinigung', 'Gelenkentzündung', 20, 'AID6', 'P6')
-    INTO Krankschreibung (Kosten, Art, Grund, Dauer, AID, PaID) VALUES (75, 'Erstbescheinigung', 'Allergische Reaktion', 6, 'AID7', 'P7')
-    INTO Krankschreibung (Kosten, Art, Grund, Dauer, AID, PaID) VALUES (65, 'Folgebescheinigung', 'Herzprobleme', 12, 'AID8', 'P8')
-    INTO Krankschreibung (Kosten, Art, Grund, Dauer, AID, PaID) VALUES (85, 'Erstbescheinigung', 'Atemwegsinfekt', 8, 'AID9', 'P9')
-    INTO Krankschreibung (Kosten, Art, Grund, Dauer, AID, PaID) VALUES (55, 'Folgebescheinigung', 'Schlafstörungen', 14, 'AID10', 'P10')
-    INTO Krankschreibung (Kosten, Art, Grund, Dauer, AID, PaID) VALUES (75, 'Erstbescheinigung', 'Sportverletzung', 5, 'AID11', 'P11')
-    INTO Krankschreibung (Kosten, Art, Grund, Dauer, AID, PaID) VALUES (80, 'Folgebescheinigung', 'Schwangerschaft', 18, 'AID12', 'P12')
-    INTO Krankschreibung (Kosten, Art, Grund, Dauer, AID, PaID) VALUES (65, 'Erstbescheinigung', 'Migräne', 4, 'AID13', 'P13')
-    INTO Krankschreibung (Kosten, Art, Grund, Dauer, AID, PaID) VALUES (95, 'Folgebescheinigung', 'Psychische Belastung', 25, 'AID14', 'P14')
-    INTO Krankschreibung (Kosten, Art, Grund, Dauer, AID, PaID) VALUES (70, 'Erstbescheinigung', 'Verdauungsprobleme', 7, 'AID15', 'P15')
-    INTO Krankschreibung (Kosten, Art, Grund, Dauer, AID, PaID) VALUES (50, 'Folgebescheinigung', 'Knochenbruch', 30, 'AID16', 'P16')
-    INTO Krankschreibung (Kosten, Art, Grund, Dauer, AID, PaID) VALUES (85, 'Erstbescheinigung', 'Hautinfektion', 6, 'AID1', 'P17')
-    INTO Krankschreibung (Kosten, Art, Grund, Dauer, AID, PaID) VALUES (75, 'Folgebescheinigung', 'Nierenprobleme', 14, 'AID2', 'P18')
-    INTO Krankschreibung (Kosten, Art, Grund, Dauer, AID, PaID) VALUES (60, 'Erstbescheinigung', 'Augeninfektion', 5, 'AID3', 'P19')
-    INTO Krankschreibung (Kosten, Art, Grund, Dauer, AID, PaID) VALUES (90, 'Folgebescheinigung', 'Diabetes', 20, 'AID4', 'P20')
-    INTO Krankschreibung (Kosten, Art, Grund, Dauer, AID, PaID) VALUES (55, 'Erstbescheinigung', 'Ernährungsberatung', 3, 'AID5', 'P21')
-    INTO Krankschreibung (Kosten, Art, Grund, Dauer, AID, PaID) VALUES (80, 'Folgebescheinigung', 'Psychosomatische Beschwerden', 12, 'AID6', 'P22')
-    INTO Krankschreibung (Kosten, Art, Grund, Dauer, AID, PaID) VALUES (65, 'Erstbescheinigung', 'Zahnprobleme', 5, 'AID7', 'P23')
-    INTO Krankschreibung (Kosten, Art, Grund, Dauer, AID, PaID) VALUES (75, 'Folgebescheinigung', 'Herzrhythmusstörungen', 18, 'AID8', 'P24')
-    INTO Krankschreibung (Kosten, Art, Grund, Dauer, AID, PaID) VALUES (55, 'Erstbescheinigung', 'Hörsturz', 4, 'AID9', 'P25')
-    INTO Krankschreibung (Kosten, Art, Grund, Dauer, AID, PaID) VALUES (70, 'Folgebescheinigung', 'Arbeitsüberlastung', 15, 'AID10', 'P26')
-    INTO Krankschreibung (Kosten, Art, Grund, Dauer, AID, PaID) VALUES (95, 'Erstbescheinigung', 'Blasenentzündung', 7, 'AID11', 'P27')
-    INTO Krankschreibung (Kosten, Art, Grund, Dauer, AID, PaID) VALUES (60, 'Folgebescheinigung', 'Schilddrüsenprobleme', 14, 'AID12', 'P28')
-    INTO Krankschreibung (Kosten, Art, Grund, Dauer, AID, PaID) VALUES (80, 'Erstbescheinigung', 'Rheumatische Beschwerden', 20, 'AID13', 'P29')
-    INTO Krankschreibung (Kosten, Art, Grund, Dauer, AID, PaID) VALUES (85, 'Langzeit', 'Rheumatische Beschwerden', 20, 'AID14', 'P30')
-SELECT 1 FROM dual;
+INSERT INTO Krankschreibung (Kosten, Art, Grund, Dauer, AID, PaID) VALUES (50, 'Erstbescheinigung', 'Erkältung', 5, 'AID1', 'P1');
+INSERT INTO Krankschreibung (Kosten, Art, Grund, Dauer, AID, PaID) VALUES (80, 'Folgebescheinigung', 'Rückenprobleme', 10, 'AID2', 'P2');
+INSERT INTO Krankschreibung (Kosten, Art, Grund, Dauer, AID, PaID) VALUES (60, 'Erstbescheinigung', 'Magenbeschwerden', 7, 'AID3', 'P3');
+INSERT INTO Krankschreibung (Kosten, Art, Grund, Dauer, AID, PaID) VALUES (70, 'Folgebescheinigung', 'Depression', 15, 'AID4', 'P4');
+INSERT INTO Krankschreibung (Kosten, Art, Grund, Dauer, AID, PaID) VALUES (55, 'Erstbescheinigung', 'Kopfschmerzen', 3, 'AID5', 'P5');
+INSERT INTO Krankschreibung (Kosten, Art, Grund, Dauer, AID, PaID) VALUES (90, 'Folgebescheinigung', 'Gelenkentzündung', 20, 'AID6', 'P6');
+INSERT INTO Krankschreibung (Kosten, Art, Grund, Dauer, AID, PaID) VALUES (75, 'Erstbescheinigung', 'Allergische Reaktion', 6, 'AID7', 'P7');
+INSERT INTO Krankschreibung (Kosten, Art, Grund, Dauer, AID, PaID) VALUES (65, 'Folgebescheinigung', 'Herzprobleme', 12, 'AID8', 'P8');
+INSERT INTO Krankschreibung (Kosten, Art, Grund, Dauer, AID, PaID) VALUES (85, 'Erstbescheinigung', 'Atemwegsinfekt', 8, 'AID9', 'P9');
+INSERT INTO Krankschreibung (Kosten, Art, Grund, Dauer, AID, PaID) VALUES (55, 'Folgebescheinigung', 'Schlafstörungen', 14, 'AID10', 'P10');
+INSERT INTO Krankschreibung (Kosten, Art, Grund, Dauer, AID, PaID) VALUES (75, 'Erstbescheinigung', 'Sportverletzung', 5, 'AID11', 'P11');
+INSERT INTO Krankschreibung (Kosten, Art, Grund, Dauer, AID, PaID) VALUES (80, 'Folgebescheinigung', 'Schwangerschaft', 18, 'AID12', 'P12');
+INSERT INTO Krankschreibung (Kosten, Art, Grund, Dauer, AID, PaID) VALUES (65, 'Erstbescheinigung', 'Migräne', 4, 'AID13', 'P13');
+INSERT INTO Krankschreibung (Kosten, Art, Grund, Dauer, AID, PaID) VALUES (95, 'Folgebescheinigung', 'Psychische Belastung', 25, 'AID14', 'P14');
+INSERT INTO Krankschreibung (Kosten, Art, Grund, Dauer, AID, PaID) VALUES (70, 'Erstbescheinigung', 'Verdauungsprobleme', 7, 'AID15', 'P15');
+INSERT INTO Krankschreibung (Kosten, Art, Grund, Dauer, AID, PaID) VALUES (50, 'Folgebescheinigung', 'Knochenbruch', 30, 'AID16', 'P16');
+INSERT INTO Krankschreibung (Kosten, Art, Grund, Dauer, AID, PaID) VALUES (85, 'Erstbescheinigung', 'Hautinfektion', 6, 'AID1', 'P17');
+INSERT INTO Krankschreibung (Kosten, Art, Grund, Dauer, AID, PaID) VALUES (75, 'Folgebescheinigung', 'Nierenprobleme', 14, 'AID2', 'P18');
+INSERT INTO Krankschreibung (Kosten, Art, Grund, Dauer, AID, PaID) VALUES (60, 'Erstbescheinigung', 'Augeninfektion', 5, 'AID3', 'P19');
+INSERT INTO Krankschreibung (Kosten, Art, Grund, Dauer, AID, PaID) VALUES (90, 'Folgebescheinigung', 'Diabetes', 20, 'AID4', 'P20');
+INSERT INTO Krankschreibung (Kosten, Art, Grund, Dauer, AID, PaID) VALUES (55, 'Erstbescheinigung', 'Ernährungsberatung', 3, 'AID5', 'P21');
+INSERT INTO Krankschreibung (Kosten, Art, Grund, Dauer, AID, PaID) VALUES (80, 'Folgebescheinigung', 'Psychosomatische Beschwerden', 12, 'AID6', 'P22');
+INSERT INTO Krankschreibung (Kosten, Art, Grund, Dauer, AID, PaID) VALUES (65, 'Erstbescheinigung', 'Zahnprobleme', 5, 'AID7', 'P23');
+INSERT INTO Krankschreibung (Kosten, Art, Grund, Dauer, AID, PaID) VALUES (75, 'Folgebescheinigung', 'Herzrhythmusstörungen', 18, 'AID8', 'P24');
+INSERT INTO Krankschreibung (Kosten, Art, Grund, Dauer, AID, PaID) VALUES (55, 'Erstbescheinigung', 'Hörsturz', 4, 'AID9', 'P25');
+INSERT INTO Krankschreibung (Kosten, Art, Grund, Dauer, AID, PaID) VALUES (70, 'Folgebescheinigung', 'Arbeitsüberlastung', 15, 'AID10', 'P26');
+INSERT INTO Krankschreibung (Kosten, Art, Grund, Dauer, AID, PaID) VALUES (95, 'Erstbescheinigung', 'Blasenentzündung', 7, 'AID11', 'P27');
+INSERT INTO Krankschreibung (Kosten, Art, Grund, Dauer, AID, PaID) VALUES (60, 'Folgebescheinigung', 'Schilddrüsenprobleme', 14, 'AID12', 'P28');
+INSERT INTO Krankschreibung (Kosten, Art, Grund, Dauer, AID, PaID) VALUES (80, 'Erstbescheinigung', 'Rheumatische Beschwerden', 20, 'AID13', 'P29');
 
 
 -- Insert data into Brief table
