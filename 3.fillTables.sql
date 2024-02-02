@@ -45,17 +45,39 @@ SELECT 1 FROM dual;
 
 
 -- Insert data into Leistung table
-BEGIN
-    FOR i IN 1..50 LOOP
-        INSERT INTO Leistung VALUES (
-            'GOAE'||i, 
-            'Art'||i, 
-            'Description'||i, 
-            i * 100
-        );
-    END LOOP;
-END;
-/
+INSERT ALL 
+    INTO Leistung (GOAE, Art, Beschr, Kosten) VALUES ('1', 'privat', 'Ärztliche Beratung', 10.72)
+    INTO Leistung (GOAE, Art, Beschr, Kosten) VALUES ('2', 'gesetzlich', 'Besuch', 23.00)
+    INTO Leistung (GOAE, Art, Beschr, Kosten) VALUES ('3', 'privat', 'Symptombezogene Untersuchung', 4.66)
+    INTO Leistung (GOAE, Art, Beschr, Kosten) VALUES ('4', 'gesetzlich', 'Einfache Laboruntersuchungen', 5.36)
+    INTO Leistung (GOAE, Art, Beschr, Kosten) VALUES ('5', 'privat', 'Röntgenuntersuchung', 28.27)
+    INTO Leistung (GOAE, Art, Beschr, Kosten) VALUES ('6', 'gesetzlich', 'Ultraschalluntersuchung', 20.10)
+    INTO Leistung (GOAE, Art, Beschr, Kosten) VALUES ('7', 'privat', 'EKG', 16.92)
+    INTO Leistung (GOAE, Art, Beschr, Kosten) VALUES ('8', 'gesetzlich', 'Blutdruckmessung', 2.33)
+    INTO Leistung (GOAE, Art, Beschr, Kosten) VALUES ('9', 'privat', 'Blutzuckermessung', 1.15)
+    INTO Leistung (GOAE, Art, Beschr, Kosten) VALUES ('10', 'gesetzlich', 'Injektion', 4.66)
+    INTO Leistung (GOAE, Art, Beschr, Kosten) VALUES ('11', 'privat', 'Infusion', 10.72)
+    INTO Leistung (GOAE, Art, Beschr, Kosten) VALUES ('12', 'gesetzlich', 'Wundversorgung', 23.00)
+    INTO Leistung (GOAE, Art, Beschr, Kosten) VALUES ('13', 'privat', 'Gipsverband', 4.66)
+    INTO Leistung (GOAE, Art, Beschr, Kosten) VALUES ('14', 'gesetzlich', 'Katheter', 5.36)
+    INTO Leistung (GOAE, Art, Beschr, Kosten) VALUES ('15', 'privat', 'Narkose', 28.27)
+    INTO Leistung (GOAE, Art, Beschr, Kosten) VALUES ('16', 'gesetzlich', 'Operation', 200.00)
+    INTO Leistung (GOAE, Art, Beschr, Kosten) VALUES ('17', 'privat', 'Physiotherapie', 15.13)
+    INTO Leistung (GOAE, Art, Beschr, Kosten) VALUES ('18', 'gesetzlich', 'Psychotherapie', 50.33)
+    INTO Leistung (GOAE, Art, Beschr, Kosten) VALUES ('19', 'privat', 'Akupunktur', 30.26)
+    INTO Leistung (GOAE, Art, Beschr, Kosten) VALUES ('20', 'gesetzlich', 'Homöopathie', 40.46)
+    INTO Leistung (GOAE, Art, Beschr, Kosten) VALUES ('21', 'privat', 'Osteopathie', 60.52)
+    INTO Leistung (GOAE, Art, Beschr, Kosten) VALUES ('22', 'gesetzlich', 'Chiropraktik', 80.92)
+    INTO Leistung (GOAE, Art, Beschr, Kosten) VALUES ('23', 'privat', 'Massage', 25.39)
+    INTO Leistung (GOAE, Art, Beschr, Kosten) VALUES ('24', 'gesetzlich', 'Elektrotherapie', 10.72)
+    INTO Leistung (GOAE, Art, Beschr, Kosten) VALUES ('25', 'privat', 'Lichttherapie', 23.00)
+    INTO Leistung (GOAE, Art, Beschr, Kosten) VALUES ('26', 'gesetzlich', 'Wärmebehandlung', 4.66)
+    INTO Leistung (GOAE, Art, Beschr, Kosten) VALUES ('27', 'privat', 'Kältetherapie', 5.36)
+    INTO Leistung (GOAE, Art, Beschr, Kosten) VALUES ('28', 'gesetzlich', 'Hydrotherapie', 28.27)
+    INTO Leistung (GOAE, Art, Beschr, Kosten) VALUES ('29', 'privat', 'Atemtherapie', 20.10)
+    INTO Leistung (GOAE, Art, Beschr, Kosten) VALUES ('30', 'gesetzlich', 'Ergotherapie', 16.92)
+SELECT 1 FROM dual;
+
 
 -- Insert data into Arzt table
 INSERT ALL
