@@ -101,24 +101,46 @@ SELECT 1 FROM dual;
 
 
 -- Insert data into Medikament table
-BEGIN
-    FOR i IN 1..50 LOOP
-        INSERT INTO Medikament VALUES (
-            i, 
-            'Medication'||i, 
-            'Packaging'||i, 
-            'Dosage'||i, 
-            'Form'||i, 
-            'UsageNotes'||i, 
-            SYSDATE, 
-            'Manufacturer'||i, 
-            'ActiveIngredient'||i, 
-            'SideEffects'||i, 
-            i * 10
-        );
-    END LOOP;
-END;
-/
+INSERT ALL
+    INTO Medikament (PZN, Name, Verpfl, Dos, Form, Unv, ZDt, Herst, Wirk, Neben, Preis) VALUES (1234567, 'Paracetamol', 'Rezeptpflichtig', '500mg', 'Tablette', 'Keine bekannt', TO_DATE('01-01-2022', 'DD-MM-YYYY'), 'Generika Pharma', 'Paracetamol', 'Keine', 5.99)
+    INTO Medikament (PZN, Name, Verpfl, Dos, Form, Unv, ZDt, Herst, Wirk, Neben, Preis) VALUES (2345678, 'Ibuprofen', 'Rezeptpflichtig', '400mg', 'Tablette', 'Magenprobleme', TO_DATE('01-02-2022', 'DD-MM-YYYY'), 'Pharma AG', 'Ibuprofen', 'Schwindel', 7.49)
+    INTO Medikament (PZN, Name, Verpfl, Dos, Form, Unv, ZDt, Herst, Wirk, Neben, Preis) VALUES (3456789, 'Aspirin', 'Freiverkäuflich', '100mg', 'Tablette', 'Keine bekannt', TO_DATE('01-03-2022', 'DD-MM-YYYY'), 'Gesundheit GmbH', 'Acetylsalicylsäure', 'Magenbeschwerden', 3.99)
+    INTO Medikament (PZN, Name, Verpfl, Dos, Form, Unv, ZDt, Herst, Wirk, Neben, Preis) VALUES (4567890, 'Lorazepam', 'Rezeptpflichtig', '2mg', 'Tablette', 'Alkohol', TO_DATE('01-04-2022', 'DD-MM-YYYY'), 'Pharmex', 'Lorazepam', 'Schläfrigkeit', 12.99)
+    INTO Medikament (PZN, Name, Verpfl, Dos, Form, Unv, ZDt, Herst, Wirk, Neben, Preis) VALUES (5678901, 'Omeprazol', 'Rezeptpflichtig', '20mg', 'Kapsel', 'Keine bekannt', TO_DATE('01-05-2022', 'DD-MM-YYYY'), 'Medico', 'Omeprazol', 'Kopfschmerzen', 9.99)
+    INTO Medikament (PZN, Name, Verpfl, Dos, Form, Unv, ZDt, Herst, Wirk, Neben, Preis) VALUES (6789012, 'Levocetirizin', 'Rezeptpflichtig', '5mg', 'Tablette', 'Keine bekannt', TO_DATE('01-06-2022', 'DD-MM-YYYY'), 'Pharmalife', 'Levocetirizin', 'Müdigkeit', 8.49)
+    INTO Medikament (PZN, Name, Verpfl, Dos, Form, Unv, ZDt, Herst, Wirk, Neben, Preis) VALUES (7890123, 'Glycerin', 'Freiverkäuflich', '-', 'Liquid', 'Keine bekannt', TO_DATE('01-07-2022', 'DD-MM-YYYY'), 'Naturapotheke', 'Glycerin', 'Keine', 4.99)
+    INTO Medikament (PZN, Name, Verpfl, Dos, Form, Unv, ZDt, Herst, Wirk, Neben, Preis) VALUES (8901234, 'Cetirizin', 'Freiverkäuflich', '10mg', 'Tablette', 'Keine bekannt', TO_DATE('01-08-2022', 'DD-MM-YYYY'), 'Gesundheitskraft', 'Cetirizin', 'Trockener Mund', 6.99)
+    INTO Medikament (PZN, Name, Verpfl, Dos, Form, Unv, ZDt, Herst, Wirk, Neben, Preis) VALUES (9012345, 'Diclofenac', 'Rezeptpflichtig', '75mg', 'Tablette', 'Magenprobleme', TO_DATE('01-09-2022', 'DD-MM-YYYY'), 'Pharmareich', 'Diclofenac', 'Übelkeit', 7.99)
+    INTO Medikament (PZN, Name, Verpfl, Dos, Form, Unv, ZDt, Herst, Wirk, Neben, Preis) VALUES (1230456, 'Sertralin', 'Rezeptpflichtig', '50mg', 'Tablette', 'Alkohol', TO_DATE('01-10-2022', 'DD-MM-YYYY'), 'Medisafe', 'Sertralin', 'Schlafstörungen', 11.49)
+    INTO Medikament (PZN, Name, Verpfl, Dos, Form, Unv, ZDt, Herst, Wirk, Neben, Preis) VALUES (2340567, 'Metoprolol', 'Rezeptpflichtig', '50mg', 'Tablette', 'Keine bekannt', TO_DATE('01-11-2022', 'DD-MM-YYYY'), 'Pharmalux', 'Metoprolol', 'Schwindel', 8.99)
+    INTO Medikament (PZN, Name, Verpfl, Dos, Form, Unv, ZDt, Herst, Wirk, Neben, Preis) VALUES (3450678, 'Atorvastatin', 'Rezeptpflichtig', '20mg', 'Tablette', 'Keine bekannt', TO_DATE('01-12-2022', 'DD-MM-YYYY'), 'Healthy Pharma', 'Atorvastatin', 'Muskelbeschwerden', 9.99)
+    INTO Medikament (PZN, Name, Verpfl, Dos, Form, Unv, ZDt, Herst, Wirk, Neben, Preis) VALUES (4560789, 'Mirtazapin', 'Rezeptpflichtig', '15mg', 'Tablette', 'Alkohol', TO_DATE('01-01-2023', 'DD-MM-YYYY'), 'Pharmatech', 'Mirtazapin', 'Gewichtszunahme', 13.49)
+    INTO Medikament (PZN, Name, Verpfl, Dos, Form, Unv, ZDt, Herst, Wirk, Neben, Preis) VALUES (5670890, 'Fentanyl', 'Rezeptpflichtig', '25µg/h', 'Pflaster', 'Alkohol', TO_DATE('01-02-2023', 'DD-MM-YYYY'), 'Pain Relief', 'Fentanyl', 'Atembeschwerden', 14.99)
+    INTO Medikament (PZN, Name, Verpfl, Dos, Form, Unv, ZDt, Herst, Wirk, Neben, Preis) VALUES (6780901, 'Prednisolon', 'Rezeptpflichtig', '20mg', 'Tablette', 'Keine bekannt', TO_DATE('01-03-2023', 'DD-MM-YYYY'), 'Pharmaworld', 'Prednisolon', 'Schlafstörungen', 6.99)
+    INTO Medikament (PZN, Name, Verpfl, Dos, Form, Unv, ZDt, Herst, Wirk, Neben, Preis) VALUES (7890123, 'Ranitidin', 'Freiverkäuflich', '150mg', 'Tablette', 'Keine bekannt', TO_DATE('01-04-2023', 'DD-MM-YYYY'), 'Digesta', 'Ranitidin', 'Verstopfung', 5.49)
+    INTO Medikament (PZN, Name, Verpfl, Dos, Form, Unv, ZDt, Herst, Wirk, Neben, Preis) VALUES (8901234, 'Lisinopril', 'Rezeptpflichtig', '10mg', 'Tablette', 'Keine bekannt', TO_DATE('01-05-2023', 'DD-MM-YYYY'), 'HeartCare', 'Lisinopril', 'Schwindel', 7.99)
+    INTO Medikament (PZN, Name, Verpfl, Dos, Form, Unv, ZDt, Herst, Wirk, Neben, Preis) VALUES (9012345, 'Amoxicillin', 'Rezeptpflichtig', '500mg', 'Kapsel', 'Keine bekannt', TO_DATE('01-06-2023', 'DD-MM-YYYY'), 'Antibio', 'Amoxicillin', 'Magenbeschwerden', 9.99)
+    INTO Medikament (PZN, Name, Verpfl, Dos, Form, Unv, ZDt, Herst, Wirk, Neben, Preis) VALUES (1230456, 'Citalopram', 'Rezeptpflichtig', '20mg', 'Tablette', 'Alkohol', TO_DATE('01-07-2023', 'DD-MM-YYYY'), 'PharmaPlus', 'Citalopram', 'Schlaflosigkeit', 8.49)
+    INTO Medikament (PZN, Name, Verpfl, Dos, Form, Unv, ZDt, Herst, Wirk, Neben, Preis) VALUES (2340567, 'Amlodipin', 'Rezeptpflichtig', '5mg', 'Tablette', 'Keine bekannt', TO_DATE('01-08-2023', 'DD-MM-YYYY'), 'CardioHealth', 'Amlodipin', 'Kopfschmerzen', 10.49)
+    INTO Medikament (PZN, Name, Verpfl, Dos, Form, Unv, ZDt, Herst, Wirk, Neben, Preis) VALUES (3450678, 'Warfarin', 'Rezeptpflichtig', '2mg', 'Tablette', 'Keine bekannt', TO_DATE('01-09-2023', 'DD-MM-YYYY'), 'ThromboPharm', 'Warfarin', 'Blutungen', 11.99)
+    INTO Medikament (PZN, Name, Verpfl, Dos, Form, Unv, ZDt, Herst, Wirk, Neben, Preis) VALUES (4560789, 'Metformin', 'Rezeptpflichtig', '850mg', 'Tablette', 'Keine bekannt', TO_DATE('01-10-2023', 'DD-MM-YYYY'), 'DiabetesCare', 'Metformin', 'Magen-Darm-Beschwerden', 6.99)
+    INTO Medikament (PZN, Name, Verpfl, Dos, Form, Unv, ZDt, Herst, Wirk, Neben, Preis) VALUES (5670890, 'Clarithromycin', 'Rezeptpflichtig', '250mg', 'Tablette', 'Keine bekannt', TO_DATE('01-11-2023', 'DD-MM-YYYY'), 'BacteriaKiller', 'Clarithromycin', 'Durchfall', 8.99)
+    INTO Medikament (PZN, Name, Verpfl, Dos, Form, Unv, ZDt, Herst, Wirk, Neben, Preis) VALUES (6780901, 'Diazepam', 'Rezeptpflichtig', '10mg', 'Tablette', 'Alkohol', TO_DATE('01-12-2023', 'DD-MM-YYYY'), 'Serenity Pharma', 'Diazepam', 'Müdigkeit', 7.49)
+    INTO Medikament (PZN, Name, Verpfl, Dos, Form, Unv, ZDt, Herst, Wirk, Neben, Preis) VALUES (7890123, 'Allopurinol', 'Rezeptpflichtig', '100mg', 'Tablette', 'Keine bekannt', TO_DATE('01-01-2024', 'DD-MM-YYYY'), 'GoutCare', 'Allopurinol', 'Übelkeit', 6.49)
+    INTO Medikament (PZN, Name, Verpfl, Dos, Form, Unv, ZDt, Herst, Wirk, Neben, Preis) VALUES (8901234, 'Simvastatin', 'Rezeptpflichtig', '20mg', 'Tablette', 'Keine bekannt', TO_DATE('01-02-2024', 'DD-MM-YYYY'), 'CholesterolBuster', 'Simvastatin', 'Muskelbeschwerden', 9.49)
+    INTO Medikament (PZN, Name, Verpfl, Dos, Form, Unv, ZDt, Herst, Wirk, Neben, Preis) VALUES (9012345, 'Tramadol', 'Rezeptpflichtig', '50mg', 'Tablette', 'Alkohol', TO_DATE('01-03-2024', 'DD-MM-YYYY'), 'PainReliefPharma', 'Tramadol', 'Schwindel', 12.99)
+    INTO Medikament (PZN, Name, Verpfl, Dos, Form, Unv, ZDt, Herst, Wirk, Neben, Preis) VALUES (1230456, 'Ciprofloxacin', 'Rezeptpflichtig', '500mg', 'Tablette', 'Keine bekannt', TO_DATE('01-04-2024', 'DD-MM-YYYY'), 'InfectoPharm', 'Ciprofloxacin', 'Magenschmerzen', 11.99)
+    INTO Medikament (PZN, Name, Verpfl, Dos, Form, Unv, ZDt, Herst, Wirk, Neben, Preis) VALUES (2340567, 'Venlafaxin', 'Rezeptpflichtig', '75mg', 'Tablette', 'Alkohol', TO_DATE('01-05-2024', 'DD-MM-YYYY'), 'MoodStabilizer', 'Venlafaxin', 'Gewichtszunahme', 13.99)
+    INTO Medikament (PZN, Name, Verpfl, Dos, Form, Unv, ZDt, Herst, Wirk, Neben, Preis) VALUES (3450678, 'Metronidazol', 'Rezeptpflichtig', '200mg', 'Tablette', 'Keine bekannt', TO_DATE('01-06-2024', 'DD-MM-YYYY'), 'BacterialDefense', 'Metronidazol', 'Übelkeit', 8.99)
+    INTO Medikament (PZN, Name, Verpfl, Dos, Form, Unv, ZDt, Herst, Wirk, Neben, Preis) VALUES (4560789, 'Fluoxetin', 'Rezeptpflichtig', '20mg', 'Kapsel', 'Alkohol', TO_DATE('01-07-2024', 'DD-MM-YYYY'), 'MindHealth', 'Fluoxetin', 'Schlafstörungen', 10.49)
+    INTO Medikament (PZN, Name, Verpfl, Dos, Form, Unv, ZDt, Herst, Wirk, Neben, Preis) VALUES (5670890, 'Hydrochlorothiazid', 'Rezeptpflichtig', '12.5mg', 'Tablette', 'Keine bekannt', TO_DATE('01-08-2024', 'DD-MM-YYYY'), 'HypertensionCare', 'Hydrochlorothiazid', 'Müdigkeit', 7.99)
+    INTO Medikament (PZN, Name, Verpfl, Dos, Form, Unv, ZDt, Herst, Wirk, Neben, Preis) VALUES (6780901, 'Candesartan', 'Rezeptpflichtig', '16mg', 'Tablette', 'Keine bekannt', TO_DATE('01-09-2024', 'DD-MM-YYYY'), 'HeartGuard', 'Candesartan', 'Kopfschmerzen', 9.49)
+    INTO Medikament (PZN, Name, Verpfl, Dos, Form, Unv, ZDt, Herst, Wirk, Neben, Preis) VALUES (7890123, 'Methotrexat', 'Rezeptpflichtig', '10mg', 'Tablette', 'Keine bekannt', TO_DATE('01-10-2024', 'DD-MM-YYYY'), 'RheumaRelief', 'Methotrexat', 'Übelkeit', 11.99)
+    INTO Medikament (PZN, Name, Verpfl, Dos, Form, Unv, ZDt, Herst, Wirk, Neben, Preis) VALUES (8901234, 'Itraconazol', 'Rezeptpflichtig', '100mg', 'Kapsel', 'Keine bekannt', TO_DATE('01-11-2024', 'DD-MM-YYYY'), 'FungalGuard', 'Itraconazol', 'Magenschmerzen', 14.99)
+    INTO Medikament (PZN, Name, Verpfl, Dos, Form, Unv, ZDt, Herst, Wirk, Neben, Preis) VALUES (9012345, 'Clopidogrel', 'Rezeptpflichtig', '75mg', 'Tablette', 'Keine bekannt', TO_DATE('01-12-2024', 'DD-MM-YYYY'), 'ClotStopper', 'Clopidogrel', 'Schwindel', 12.49)
+SELECT 1 FROM dual;
+
+
 
 -- Insert data into Rezept table
 BEGIN
